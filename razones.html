@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Razones</title>
+<style>
+body{margin:0;font-family:Segoe UI;background:#111;color:white;text-align:center;padding:50px;opacity:0;transition:opacity 1s;}
+body.loaded{opacity:1;}
+img{width:250px;border-radius:20px;margin:20px 0;}
+a{display:block;color:#ff4d88;font-size:20px;text-decoration:none;margin-top:30px;}
+a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<audio id="bgmusic" src="musica.mp3" autoplay loop></audio>
+
+<h1>Razones</h1>
+<img src="foto5.jpeg">
+<p>Por qué te elijo cada día: tu risa, tu fuerza y todo lo que compartimos.</p>
+<a href="carta.html">Siguiente →</a>
+
+<script>
+window.addEventListener('load',()=>{document.body.classList.add('loaded');});
+let music=document.getElementById('bgmusic');
+document.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',e=>{
+        e.preventDefault();
+        let link=a.getAttribute('href');
+        music.pause();
+        setTimeout(()=>{window.location=link;},500);
+    });
+});
+</script>
+</body>
+</html>
