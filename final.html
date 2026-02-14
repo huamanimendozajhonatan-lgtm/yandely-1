@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Final</title>
+<style>
+body{margin:0;font-family:Segoe UI;background:#111;color:white;text-align:center;padding:50px;opacity:0;transition:opacity 1s;}
+body.loaded{opacity:1;}
+img{width:250px;border-radius:20px;margin:20px 0;}
+button{padding:15px 30px;font-size:18px;background:#ff4d88;border:none;border-radius:30px;color:white;cursor:pointer;margin-top:30px;}
+</style>
+</head>
+<body>
+<audio id="bgmusic" src="musica.mp3" autoplay loop></audio>
+
+<h1>Entonces…</h1>
+<img src="foto3.jpeg">
+<p>Si es contigo, yo voy en serio.</p>
+<button onclick="alert('Siempre contigo ❤️🔥')">Confirmar</button>
+
+<script>
+window.addEventListener('load',()=>{document.body.classList.add('loaded');});
+</script>
+</body>
+</html>
