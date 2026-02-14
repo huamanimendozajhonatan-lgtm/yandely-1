@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Título de la página</title>
+<style>
+body {
+    margin:0;
+    font-family:Segoe UI;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:50px;
+    opacity:0;
+    transition: opacity 1s;
+}
+body.loaded {opacity:1;}
+img {
+    width:250px;
+    border-radius:20px;
+    margin:20px 0;
+}
+a {
+    display:block;
+    color:#ff4d88;
+    font-size:20px;
+    text-decoration:none;
+    margin-top:30px;
+}
+a:hover {text-decoration:underline;}
+</style>
+</head>
+<body>
+<audio id="bgmusic" src="musica.mp3" autoplay loop></audio>
+
+<h1>Título de la página</h1>
+<img src="fotoX.jpeg">
+<p>Texto descriptivo de la página.</p>
+
+<a href="siguiente.html">Siguiente →</a>
+
+<script>
+// Transición suave
+window.addEventListener('load',()=>{document.body.classList.add('loaded');});
+// Mantener música al cambiar de página
+let music=document.getElementById('bgmusic');
+document.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',e=>{
+        e.preventDefault();
+        let link=a.getAttribute('href');
+        music.pause();
+        setTimeout(()=>{window.location=link;},500); // espera 0.5s para efecto
+    });
+});
+</script>
+
+</body>
+</html>
